@@ -16,9 +16,9 @@ public class ConfigController {
         this.configService = configService;
     }
 
-    @GetMapping("/config/{id}")
-    public Config getConfig(@PathVariable String id) {
-        return configService.getConfig(id);
+    @GetMapping("/config/{version}")
+    public Config getConfig(@PathVariable String version) {
+        return configService.getConfig(version);
     }
 
     @PostMapping("/config-create")
