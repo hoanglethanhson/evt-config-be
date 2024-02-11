@@ -14,8 +14,9 @@ public class ConfigRequestDTO {
     private String value;
 
     public static Config toEntity(ConfigRequestDTO configRequestDTO) {
+        long currentTimeMillis = System.currentTimeMillis();
         return Config.builder()
-                .id(UUID.randomUUID().toString())
+                .version(UUID.nameUUIDFromBytes(String.valueOf(currentTimeMillis).getBytes()).toString())
                 .value(configRequestDTO.getValue())
                 .build();
     }

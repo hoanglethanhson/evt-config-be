@@ -30,4 +30,9 @@ public class ConfigController {
     public void createConfigGzip(@RequestBody String gzipData) {
         log.info("Gzip data: {}", gzipData);
     }
+
+    @GetMapping("/config")
+    public Config getLatestConfig() {
+        return configService.getLatestConfig();
+    }
 }

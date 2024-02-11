@@ -21,6 +21,10 @@ public class ConfigService {
         return configRepository.findById(id).orElse(null);
     }
 
+    public Config getLatestConfig() {
+        return configRepository.findFirstByOrderByVersionDesc();
+    }
+
     public void createConfig(ConfigRequestDTO requestDTO) {
         log.info("Creating config: {}", requestDTO);
         Config config = ConfigRequestDTO.toEntity(requestDTO);

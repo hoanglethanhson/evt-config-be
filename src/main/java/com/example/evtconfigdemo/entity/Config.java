@@ -21,8 +21,8 @@ import java.util.Date;
 public class Config {
     //define id and value
     @Id
-    @Column(name = "id")
-    private String id;
+    @Column(name = "version")
+    private String version;
     @Column(name = "value")
     private String value;
     @Column(name = "created_date")
